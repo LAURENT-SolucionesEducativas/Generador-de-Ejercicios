@@ -34,5 +34,5 @@ else:
 
 # Pie de página
 st.markdown("---")
-st.markdown("<p style='text-align: center; font-size: 14px;'>Hecho con ❤️ por tu profe/p>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center; font-size: 14px;'>Hecho con ❤️ por tu profe</p>", unsafe_allow_html=True)
 
