@@ -79,7 +79,7 @@ ejercicios = [
 ]
 
 # Título y subtítulo
-st.markdown("<div class='title'>📘 Generador de Ejercicios de Ecuaciones Lineales</div>", unsafe_allow_html=True)
+st.markdown("<div class='title'>📘 Ejercicios de Ecuaciones Lineales</div>", unsafe_allow_html=True)
 st.markdown("<div class='subtext'>Haz clic para generar <strong>5 ejercicios aleatorios</strong> y ¡pon a prueba tu mente! 🧠</div>", unsafe_allow_html=True)
 
 # Botón centrado con columnas
@@ -92,7 +92,7 @@ with col2:
             st.markdown(f"<div class='ejercicio-box'><strong>{i}.</strong> {ejercicio}</div>", unsafe_allow_html=True)
         st.success("¡Listo! Resuélvelos en tu cuaderno 📓")
     else:
-        st.info("Haz clic en el botón para empezar 🎯")
+        st.info("Empieza ya!! 🎯")
 
 # Pie de página
 st.markdown("<div class='footer'>Hecho con ❤️ por tu profe</div>", unsafe_allow_html=True)
