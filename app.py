@@ -1,45 +1,8 @@
 import streamlit as st
 import random
 
-# Configurar la página con título e ícono
+# Configurar la página
 st.set_page_config(page_title="Generador de Ecuaciones", page_icon="🧮")
-
-# Fondo con estilo CSS
-st.markdown("""
-    <style>
-        body {
-            background-color: #f0f4f8;
-        }
-        .stApp {
-            background: linear-gradient(to bottom, #e0f7fa, #ffffff);
-            padding: 20px;
-        }
-        .title {
-            text-align: center;
-            color: #1565C0;
-            font-size: 40px;
-            font-weight: bold;
-        }
-        .subtext {
-            text-align: center;
-            font-size: 18px;
-            color: #333333;
-        }
-        .ejercicio-box {
-            background-color: white;
-            padding: 15px;
-            margin-bottom: 10px;
-            border-radius: 10px;
-            box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
-        }
-        .footer {
-            text-align: center;
-            font-size: 14px;
-            color: #888888;
-            margin-top: 40px;
-        }
-    </style>
-""", unsafe_allow_html=True)
 
 # Lista de ejercicios
 ejercicios = [
@@ -55,20 +18,54 @@ ejercicios = [
     "Resuelve 7x - 4 = 24"
 ]
 
-# Mostrar título
-st.markdown("<div class='title'>📘 Generador de Ejercicios de Ecuaciones Lineales</div>", unsafe_allow_html=True)
-st.markdown("<p class='subtext'>Haz clic para generar <strong>5 ejercicios aleatorios</strong> y ¡pon a prueba tu mente! 🧠</p>", unsafe_allow_html=True)
+# Fondo más claro y tipografía personalizada
+st.markdown("""
+    <style>
+        .titulo {
+            text-align: center;
+            color: #2c3e50;
+            font-size: 38px;
+            font-weight: bold;
+        }
+        .subtexto {
+            text-align: center;
+            font-size: 20px;
+            color: #555;
+            margin-bottom: 30px;
+        }
+        .ejercicio-box {
+            background-color: #ffffff;
+            border-left: 5px solid #3498db;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            font-size: 18px;
+        }
+        .footer {
+            text-align: center;
+            font-size: 14px;
+            color: #999;
+            margin-top: 50px;
+        }
+    </style>
+""", unsafe_allow_html=True)
+
+# Imagen motivadora
+st.image("https://i.imgur.com/Nu9dhdK.png", width=150, use_column_width=False)
+
+# Título y subtítulo
+st.markdown("<div class='titulo'>📘 Generador de Ejercicios de Ecuaciones Lineales</div>", unsafe_allow_html=True)
+st.markdown("<div class='subtexto'>Haz clic para generar <strong>5 ejercicios aleatorios</strong> y ¡pon a prueba tu mente! 🧠</div>", unsafe_allow_html=True)
 
 # Botón
 if st.button("🎲 Generar 5 ejercicios"):
     seleccion = random.sample(ejercicios, 5)
     st.markdown("### 📝 Tus ejercicios son:")
     for i, ejercicio in enumerate(seleccion, 1):
-        st.markdown(f"<div class='ejercicio-box'><strong>{i}. </strong>{ejercicio}</div>", unsafe_allow_html=True)
+        st.markdown(f"<div class='ejercicio-box'><strong>{i}.</strong> {ejercicio}</div>", unsafe_allow_html=True)
     st.success("¡Listo! Resuélvelos en tu cuaderno 📓")
 else:
     st.info("Haz clic en el botón para empezar 🎯")
 
 # Pie de página
 st.markdown("<div class='footer'>Hecho con ❤️ por tu profe</div>", unsafe_allow_html=True)
-
