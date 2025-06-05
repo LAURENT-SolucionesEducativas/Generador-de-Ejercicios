@@ -76,7 +76,7 @@ if st.button("🎲 Generar 5 ejercicios"):
         st.markdown(f"<div class='ejercicio-box'><strong>{i}.</strong> {ejercicio}</div>", unsafe_allow_html=True)
     st.success("¡Listo! Resuélvelos en tu cuaderno 📓")
 else:
-    st.info("Haz clic en el botón para empezar 🎯")
+    st.info("Empezar 🎯")
 
 # Pie de página
 st.markdown("<div class='footer'>Hecho con ❤️ por tu profe | LAURENT - Soluciones Tecnológicas Educativas</div>", unsafe_allow_html=True)
