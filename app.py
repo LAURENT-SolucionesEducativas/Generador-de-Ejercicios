@@ -4,48 +4,62 @@ import random
 # Configurar la página
 st.set_page_config(page_title="Generador de Ecuaciones", page_icon="🧮")
 
-# Estilos personalizados con CSS
+# Estilos CSS para fondo y elementos visuales
 st.markdown("""
     <style>
+        /* Fondo general en azul degradado */
         .stApp {
-            background: linear-gradient(to bottom, #2193b0, #6dd5ed); /* azul degradado */
-            padding: 20px;
-            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #d0e9ff, #ffffff);
+            padding: 2rem;
         }
-        .titulo {
+
+        /* Título principal */
+        .title {
             text-align: center;
-            color: white;
-            font-size: 38px;
+            color: #0d47a1;
+            font-size: 40px;
             font-weight: bold;
             margin-bottom: 10px;
         }
-        .subtitulo {
+
+        /* Subtítulo */
+        .subtext {
             text-align: center;
-            color: #f0f0f0;
             font-size: 18px;
+            color: #333333;
             margin-bottom: 30px;
         }
+
+        /* Caja de ejercicios */
         .ejercicio-box {
-            background-color: #ffffffdd;
+            background-color: white;
             padding: 15px;
-            border-radius: 12px;
-            margin-bottom: 12px;
-            box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
-            font-size: 18px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+            font-size: 16px;
         }
+
+        /* Pie de página */
         .footer {
             text-align: center;
-            color: white;
             font-size: 14px;
-            margin-top: 50px;
+            color: #888888;
+            margin-top: 40px;
         }
-        .stButton > button {
-            background-color: #ff9800;
+
+        /* Botón personalizado */
+        div.stButton > button {
+            background-color: #1e88e5;
             color: white;
             font-size: 18px;
-            padding: 10px 20px;
+            padding: 10px 24px;
             border-radius: 8px;
             border: none;
+            transition: 0.3s;
+        }
+        div.stButton > button:hover {
+            background-color: #1565c0;
         }
     </style>
 """, unsafe_allow_html=True)
@@ -64,19 +78,21 @@ ejercicios = [
     "Resuelve 7x - 4 = 24"
 ]
 
-# Mostrar título
-st.markdown("<div class='titulo'>📘 Generador de Ejercicios de Ecuaciones Lineales</div>", unsafe_allow_html=True)
-st.markdown("<div class='subtitulo'>Haz clic para generar <strong>5 ejercicios aleatorios</strong> y ¡pon a prueba tu mente! 🧠</div>", unsafe_allow_html=True)
+# Título y subtítulo
+st.markdown("<div class='title'>📘 Generador de Ejercicios de Ecuaciones Lineales</div>", unsafe_allow_html=True)
+st.markdown("<div class='subtext'>Haz clic para generar <strong>5 ejercicios aleatorios</strong> y ¡pon a prueba tu mente! 🧠</div>", unsafe_allow_html=True)
 
-# Botón para generar ejercicios
-if st.button("🎲 Generar 5 ejercicios"):
-    seleccion = random.sample(ejercicios, 5)
-    st.markdown("### 📝 Tus ejercicios son:")
-    for i, ejercicio in enumerate(seleccion, 1):
-        st.markdown(f"<div class='ejercicio-box'><strong>{i}.</strong> {ejercicio}</div>", unsafe_allow_html=True)
-    st.success("¡Listo! Resuélvelos en tu cuaderno 📓")
-else:
-    st.info("Empezar 🎯")
+# Botón centrado con columnas
+col1, col2, col3 = st.columns([1, 2, 1])
+with col2:
+    if st.button("🎲 Generar 5 ejercicios"):
+        seleccion = random.sample(ejercicios, 5)
+        st.markdown("### 📝 Tus ejercicios son:")
+        for i, ejercicio in enumerate(seleccion, 1):
+            st.markdown(f"<div class='ejercicio-box'><strong>{i}.</strong> {ejercicio}</div>", unsafe_allow_html=True)
+        st.success("¡Listo! Resuélvelos en tu cuaderno 📓")
+    else:
+        st.info("Haz clic en el botón para empezar 🎯")
 
 # Pie de página
-st.markdown("<div class='footer'>Hecho con ❤️ por tu profe | LAURENT - Soluciones Tecnológicas Educativas</div>", unsafe_allow_html=True)
+st.markdown("<div class='footer'>Hecho con ❤️ por tu profe</div>", unsafe_allow_html=True)
