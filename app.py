@@ -95,4 +95,4 @@ with col2:
         st.info("Empieza ya!! 🎯")
 
 # Pie de página
-st.markdown("<div class='footer'>Hecho con ❤️ por tu profe</div>", unsafe_allow_html=True)
+st.markdown("<div class='footer'>Hecho con ❤️ por tu profe | LAURENT - Soluciones Tecnológicas Educativas</div>", unsafe_allow_html=True)
